@@ -1,23 +1,23 @@
 @charset "utf-8";
 
+/* common */
 .container {
     width: 1140px;
     height: 100%;
     margin: 0 auto;
-    background-color: gold;
+    /* background-color: gold; */
 }
 
+/* header */
 header {
     width: 100%;
     height: 160px;
 }
 
-
 #header_top {
     width: 100%;
     height: 40px;
     background-color: #eee;
-
 }
 
 #header_top .container {
@@ -27,32 +27,24 @@ header {
 }
 
 #login {
-
     width: 290px;
     height: 20px;
     background-color: tomato;
 }
 
-#login li {
-    float: left;
-    padding: 0 5px;
-    margin-top: -0px;   
-    font-size: 13px;  
-}
-
-#login li::after {
-    content: "|";
-    float: right;
-    margin-top: 5px;
-    font-size: 8px;
-    color: #ccc;      
-}
 
 #header_main {
     width: 1140px;
     height: 70px;
     margin: 0 auto;
-    background-color: skyblue;
+    padding: 17px 0; /* 위아래 여백 */
+    background-color: #fff;
+}
+
+.logo img {
+    height: 35px;    /* 로고 높이*/
+    width: auto;     /* 비율에 맞춰 가로 길이는 자동 조절*/
+    display: block;  /* 하단 공백 제거 */
 }
 
 nav {
@@ -62,21 +54,127 @@ nav {
     border-bottom: 1px solid #ddd;
 }
 
-nav .container {display: flex; justify-content: flex-start; align-items: center;}
-nav ul {width: 700px; height: 25px; display: flex; justify-content: space-between; background-color: cyan;}
-
-/*main*/
-
-main {width: 1140px; height: 2200px; margin: 0 auto; display: flex; background-color: pink;}
-aside {width: 300px; height: 100%; background-color: greenyellow;}
-
-#header_main img {
-    width: 150px;
-    height: auto;
-    margin-top: 10; 
+nav .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-#main_content {width: calc(100% - 300px); height: 100%; background-color: azure;}
+nav ul {
+    width: 700px;
+    height: 25px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+/* main */
+main {
+    width: 1140px;
+    height: 2200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+aside {
+    width: 250px;
+    height: 100%;
+}
+
+/*sidebar*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Pretendard', sans-serif; 
+}
+ul {
+  list-style: none; /* 목록의 점 표시 제거 */
+}
+a {
+  text-decoration: none; /* 링크 밑줄 제거 */
+  color: inherit; /* 부모 색상 따르기 */
+}
+
+/* 사이드바 전체 (흰색 박스) */
+.sidebar {
+  background-color: #ffffff; /* 흰색 배경 */
+}
+
+/* 파란색 상단 영역 (Header) */
+.sidebar-header {
+    width: 200px;
+  height: 100px; /* 높이 */
+  background-color: #1a6effc9; 
+  color: #ffffff; /* 흰색 글자 */
+  font-size: 20px; /* 글자 크기 */
+  font-weight: 700; /* 글자 굵게 */
+  display: flex; /* 가로세로 중앙 정렬 */
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 20px;
+
+}
+
+/* 메뉴 영역 전체 */
+.sidebar-menu {
+  width: 200px;
+  margin-top: 40px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* 메인 메뉴 항목들 */
+.sidebar-menu > li > a {
+  display: block;
+  padding: 500px 0; /* 상하 여백 */
+  font-size: 16px; /* 메인 메뉴 글자 크기 */
+  font-weight: 500; /* 메인 메뉴 글자 굵기 */
+  color: #333333; /* 진한 회색 */
+  padding: 10px 20px; /* 내부 여백 */
+}
+
+/* 베스트셀러 아래의 주간/월간 서브 메뉴 */
+.sub-menu {
+  padding-left: 20px; /* 왼쪽 들여쓰기 */
+  /* margin-top: -10px; 메인 메뉴와 간격 좁히기 */
+  margin-bottom: 10px;
+}
+
+.sub-menu li a {
+  display: block;
+  padding: 5px 0; /* 서브 메뉴 상하 여백 */
+  font-size: 12px; /* 서브 메뉴 글자 크기 (메인보다 작게) */
+  font-weight: 400; /* 서브 메뉴 글자 굵기 (연하게) */
+  color: #999999; /* 연한 회색 (이미지처럼) */
+}
+
+/* 하단 '이벤트' 영역 */
+.sidebar-footer {
+  border-top: 1px solid #eeeeee; /* 위에 구분선 추가 */
+  padding: 5px 0px 15px 0px; /*내부 여백*/
+}
+
+.sidebar-footer a {
+  display: block;
+  font-size: 16px; /* 이벤트 글자 크기 */
+  font-weight: 500; /* 이벤트 글자 굵기 */
+  color: #333333; /* 진한 회색 */
+}
+
+/* 마우스 올렸을 때 효과 */
+.sidebar-menu a:hover,
+.sidebar-footer a:hover {
+  background-color: #f9f9f9; 
+}
+
+/* 추천교재 슬라이드 부분*/
+#main_content {
+    width: calc(100% - 300px);
+    height: 100%;
+}
 
 #slider {
     width: 100%;
@@ -85,87 +183,257 @@ aside {width: 300px; height: 100%; background-color: greenyellow;}
     border: 1px solid #ddd;
     border-radius: 10px;
     display: flex;
-    /* background-color: green; */
+
 }
 
-#slider_txt{
+#slider_txt {
     width: 270px;
     height: 100%;
     position: relative;
-    background-color: pink;
- }
-
- .swiper-button-next {
+}
+/* 추천교재 슬라이드 동그라미 화살표 버튼 */
+.swiper-button-next {
     border: 1px solid #ddd;
     border-radius: 50%;
-    left: 100px;
+    left: 80px;
     right: auto;
     top: auto;
     bottom: 100px;
     color: #888;
- }
- .swiper-button-prev {
+}
+
+.swiper-button-prev {
     border: 1px solid #ddd;
     border-radius: 50%;
     left: 30px;
     top: auto;
     bottom: 100px;
     color: #888;
-
- }
-
- #slider_txt .swiper-navigation-icon {
-    width: 50%; 
-    height: 50%; 
-
 }
 
-/*swiper css*/
+#slider_txt .swiper-navigation-icon {
+    width: 50%;
+    height: 50%;
+}
 
-    #slider .swiper {
-      width: calc(100% - 270px);
-      height: 100%;
-    }
+/* swiper css */
+#slider .swiper {
+    width: calc(100% - 270px);
+    height: 100%;
+}
 
-    #new.swiper {
-        width: 100%;
-        height: 100%;
-    }
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      /* background: #444; */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-/*new*/
-
- #new{
+/* new 새로나온 교재 */
+#new {
     width: 100%;
     height: 520px;
- }
+}
 
- #new.swiper-slide{
+#new .swiper {
+    width: 100%;
+    height: 100%;
+}
+
+#new .swiper-slide {
     flex-direction: column;
- }
+    justify-content: flex-start;
+}
 
- #new.swiper-slide img {
+#new .swiper-slide img {
     width: 100%;
     height: auto;
- }
-
-/* footer*/
-
-footer {width: 100%; height: 180px; border-top: 1px solid #ddd;}
+}
 
 
+/*교재검색*/
+
+#search {
+    display: flex;          /* 글씨와 창을 가로로 나란히 */
+    align-items: center;    /* 세로 중앙 맞춤 */
+    justify-content: center;/* 가로 중앙 맞춤 */
+    gap: 20px;              /* 글씨와 창 사이 간격 */
+
+    /* 배경 및 모서리 설정 */
+    background-color: #f8f9fa; 
+    padding: 20px 200px;      /* 안쪽 여백 (배경이 글씨보다 크게 보이게 함) */
+    border-radius: 10px;     /* 모서리*/
+    
+    /* 화면 전체에서 중앙에 오게 여백 조절 */
+    width: fit-content;      /* 내용물 크기만큼만 배경색이 칠해지도록 설정 */
+    margin: 40px auto;       /* 박스 자체를 화면 가운데로 보냄 */
+}
+
+#search h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.search_bar {
+    display: flex;          
+    align-items: center;   
+    width: 300px;           
+    height: 40px;           
+    border: 1px solid #ddd; 
+    border-radius: 8px;     /* 검색창 자체의 모서리 라운드 */
+    padding: 0 15px;       
+    background-color: #fff; /* 검색창 안쪽은 흰색으로 유지 */
+}
+
+/* 글씨 쓰는 칸 (투명하게 만들기) */
+.search_bar input {
+    flex: 1;                
+    border: none;           
+    outline: none;         
+    font-size: 14px;       
+    background: transparent;
+}
+
+/* 검색창 전체 박스 */
+.search_bar {
+    display: flex;
+    align-items: center;
+}
+
+/* 검색 버튼 스타일 */
+.search_bar button {
+    width: 25px;           /* 버튼 가로 크기 */
+    height: 25px;          /* 버튼 세로 크기 */
+    border: none;
+    cursor: pointer;
+    display: flex;         /* 아이콘을 정중앙에 배치하기 위해 사용 */
+    justify-content: center;
+    align-items: center;
+}
+/* 버튼 안의 이미지(PNG) 스타일 */
+.search_icon {
+    width: 20px;           /* 돋보기 크기*/
+    height: auto;          /* 가로 비율에 맞춰 세로 자동 조절 */
+}
+
+/*공단기 베스트셀러*/
+.best_link_area {
+    margin-bottom: 10px; 
+}
+.best_link {
+    text-decoration: none; 
+    color: #333;           
+    /* font-size: 14px;        */
+    font-weight: bold;     
+}
+
+/*새로나온교재 화살표*/
+/* #new .swiper-button-next {
+    top: 20px;       
+    left: auto;       
+    bottom: auto;
+    border-radius: 0;
+    width: 20px;
+    height: 20px;
+    color: #333;    
+}
+
+#new .swiper-button-prev {
+    top: 20px;       
+    right: 60px;      
+    left: auto;       
+    bottom: auto;
+    border-radius: 0;
+    width: 20px;
+    height: 20px;
+    color: #333;    
+}
+#new .swiper-pagination {
+    position: absolute;   
+    bottom: 100px;        
+    left: 65px;         
+    width: auto;          
+    color: #888;         
+    font-size: 14px;      
+    font-weight: bold;    
+} */ */
+
+/* 새로 나온 교재 영역 전체 */
+#new {
+    width: 100%;
+    margin-top: 50px;
+}
+
+/* 제목, 숫자, 화살표를 한 줄로 만드는 설정 */
+.new_title_bar {
+    display: flex;           /* 가로로 나열 */
+    align-items: center;     /* 세로 높이 중앙 맞춤 */
+    gap: 15px;               /* 요소들 사이의 간격 */
+    margin-bottom: 20px;     /* 슬라이더와의 거리 */
+}
+
+/* 제목 여백 초기화 */
+.new_title_bar h3 {
+    margin: 0;
+    font-size: 22px;
+}
+
+/* Swiper 기본 위치(붕 떠있는 것) 초기화 - 아주 중요! */
+#new .swiper-pagination,
+#new .swiper-button-prev,
+#new .swiper-button-next {
+    position: static;        /* 제자리로 돌려놓기 */
+    width: auto;
+    height: auto;
+    margin: 0;
+    color: #333;
+}
+
+/* 페이지 숫자 스타일 */
+#new .swiper-pagination {
+    font-size: 14px;
+    font-weight: bold;
+    color: #888;
+    width: auto;             /* 너비 자동 */
+}
+
+/* 화살표 버튼을 네모 모양으로 만들기 */
+#new .swiper-button-prev,
+#new .swiper-button-next {
+    width: 30px;             /* 네모 가로 */
+    height: 30px;            /* 네모 세로 */
+    border: 1px solid #ddd;  /* 네모 테두리 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* 기본 화살표 아이콘 크기 조절 */
+#new .swiper-button-prev::after,
+#new .swiper-button-next::after {
+    font-size: 12px;         /* 화살표만 작게 */
+    font-weight: bold;
+}
+
+/* 슬라이더 영역 높이 (데이터 들어올 공간) */
+.newSwiper {
+    width: 100%;
+    height: 450px;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 180px;
+    border-top: 1px solid #ddd;
+}

@@ -8,38 +8,26 @@
 
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
-
 </head>
 
 <body>
-    <header>    
-        <div id="header_top">           
+    <header>
+        <div id="header_top">
             <div class="container">
-                <div id="login">
-            
-                    <ul>               
-                        <li><a href="#">로그인</a></li>
-                   
-                        <li><a href="#">회원가입</a></li>
-                    
-                        <li><a href="#">장바구니</a></li>
-                    
-                        <li><a href="#">고객센터</a></li>
-
-                        <li><a href="#">내강의실</a></li>            
-                    </ul>
-                </div>
+                <div id="login"></div>
             </div>
         </div>
         <div id="header_main">
-            <h1>
-                <a href="/gong/" class="btn_my">
-                    <img src="https://un-static.conects.com/un_static/img/common/logo/header_logo_dangibooks.png" alt="단기북스">
+          <div class="container">
+            <h1 class="logo">
+                <a href="#">
+                    <img src="단기북스 logo .png" alt="단기북스 로고">
                 </a>
-                    
             </h1>
+          </div>
         </div>
         <nav>
             <div class="container">
@@ -59,7 +47,24 @@
     </header>
 
     <main>
-        <aside></aside>
+        <aside class="sidebar">
+            
+            <ul class="sidebar-menu">
+                <li class="sidebar-header">단기북스</li>
+                <li><a href="#">홈</a></li>
+                <li><a href="#">전체 교재</a></li>
+                <li><a href="#">베스트셀러</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">주간</a></li>
+                        <li><a href="#">월간</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-footer">
+                    <a href="#">이벤트</a>
+                </li>
+            </ul>
+            
+        </aside>
         <div id="main_content">
             <div id="slider">
                 <div id="slider_txt">
@@ -67,21 +72,43 @@
                     <div class="swiper-button-prev"></div>
                 </div>
                 <!-- Swiper -->
-                <div class="swiper mySwiper">
+                <div class="swiper sliderSwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">Slide 1</div>
                         <div class="swiper-slide">Slide 2</div>
                         <div class="swiper-slide">Slide 3</div>
                     </div>
-                     <div class="swiper-pagination"></div>
+
+                    <div class="swiper-pagination"></div>
                 </div>
-    
             </div>
-            <div id="search"></div>
-            <div id="best"></div>
-            <div id="banner"></div>
-            <div id="new">
-                <h3>새로 나온 교재</h3>
+            <div id="search">
+                <h3>교재검색</h3>
+                <!-- Search -->
+                <div class="search_bar">
+                    <input type="text" placeholder="저자명/교재명 검색">
+                    <button type="button">
+                        <img src="돋보기.png" alt="검색 아이콘" class="search_icon">
+                    </button>
+                </div>
+            </div>
+            <div id="best">
+                <!-- 베스트 셀러-->
+                <div class="best_link_area">
+                    <a href="#" class="best_link">
+                        <h3>공단기 베스트셀러 &gt;
+                    </a></h3>
+                </div>
+                </div>
+                <div id="banner"></div>
+                <div id="new">
+                
+                    <div class="new_title_bar">
+                        <h3>새로 나온 교재</h3>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
                 <!-- Swiper -->
                 <div class="swiper newSwiper">
                     <div class="swiper-wrapper">
@@ -95,25 +122,26 @@
                         <div class="swiper-slide">Slide 8</div>
                         <div class="swiper-slide">Slide 9</div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
+                        <!-- <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div> -->
                 </div>
             </div>
         </div>
-
     </main>
 
     <footer>
+        <p>(주)에스티유니타스 | 대표이사: 홍길동 | 서울특별시 강남구...</p>
+        <p>Copyright © ST Unitas. All rights reserved.</p>
         <div class="container"></div>
     </footer>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
-    <script src="./js.swiper.js"></script>
-
-   
+    <!-- Initialize Swiper -->
+    <script src="./js/swiper.js"></script>
+    <script src="./js/book.js"></script>
 </body>
 
 </html>
